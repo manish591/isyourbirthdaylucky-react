@@ -2,3 +2,8 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+small {
+  display: block;
+  margin-bottom: 2vh;
+}
