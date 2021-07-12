@@ -1,2 +1,2 @@
-# isyourbirthdaylucky-react
-Created with CodeSandbox
+# isyourbirthdaylucky
+Made in React which tests whenther your birthday is lucky or not.
