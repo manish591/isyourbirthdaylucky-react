@@ -1,29 +1,29 @@
 import { useState } from "react";
 import "./styles.css";
 
+let sum = 0;
+let luckyNumber = 0;
+let inputDate = "";
+
 export default function App() {
   const [message, setMessage] = useState("");
-  let sum = 0;
-  let luckyNumber;
-
-  let inputValue;
 
   function setLucky(e) {
     luckyNumber = e.target.value;
   }
 
   function changeInput(e) {
-    inputValue = e.target.value;
+    inputDate = e.target.value;
   }
 
   function showLeap() {
-    if (inputValue === "" || inputValue.length !== 8) {
+    if (inputDate === "" || luckyNumber === "") {
       setMessage("Please Input Correctly!");
       return;
     }
 
-    let arrayOfDate = inputValue.split("");
-    arrayOfDate.forEach((date) => {
+    let birthArray = inputDate.split("-");
+    birthArray.forEach((date) => {
       sum += Number(date);
     });
 
@@ -44,7 +44,12 @@ export default function App() {
       <small>enter your date of birth in ddmmyyyy format</small>
       <input onChange={changeInput} type="date" />
       <small>enter your lucky number here</small>
-      <input onChange={setLucky} placeholder="enter lucky number" />
+      <input
+        onChange={setLucky}
+        placeholder="enter lucky number"
+        type="number"
+        min="1"
+      />
       <button onClick={showLeap}>Calculate</button>
       <h2>{message}</h2>
     </div>
