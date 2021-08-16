@@ -42,9 +42,9 @@ export default function App() {
         is lucky or not based on certain calulation.
       </p>
       <small>enter your date of birth in ddmmyyyy format</small>
-      <input onChange={changeInput} placeholder="ddmmyyyy" />
+      <input onChange={changeInput} type="date" />
       <small>enter your lucky number here</small>
-      <input onChange={setLucky} placeholder="number between 0 and 9" />
+      <input onChange={setLucky} placeholder="enter lucky number" />
       <button onClick={showLeap}>Calculate</button>
       <h2>{message}</h2>
     </div>
